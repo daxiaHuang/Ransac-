@@ -1,0 +1,35 @@
+Author: Ziv Yaniv (zivy@cs.huji.ac.il)
+
+This archive contains an implementation of the Random Sample
+Consensus (Ransac) framework for robust parameter estimation.
+
+The archive includes the following files:
+1. Project files for VC++ 6.0.
+2. A Unix Makefile.
+3. Source files:
+   Point2D.{cpp,h} - Primitive 2D point class used in the example.
+   ParameterEstimator.h - A virtual class, the ancestor of all parameter estimators.
+   LineParamEstimator.{cpp,h} - Class which implements the virtual functions defined by
+                                the ParameterEstimator class, for 2D lines.
+   Ransac.h - Template implementation of the Ransac algorithm.
+   RansacExample.cpp - An example which shows how to use the Ransac template.
+
+Notes:
+1. The math underlying the code which performs a least squares fit for the line
+   is described in the summary on Principle Component Analysis (PCA) found on my web
+   site (look under lesson handouts). Read the orthogonal least squares section and the
+   section about eigenvectors/eigenvalues of symmetric 2X2 matrices.
+2. For a detailed description of the Ransac see:
+   * Martin A. Fischler, Robert C. Bolles, ``Random Sample Consensus:
+     A Paradigm for Model Fitting with Applications to Image Analysis and Automated Cartography'',
+     Communications of the ACM, Vol. 24(6), 1981.
+   **Richard I. Hartely, Andrew Zisserman, "Multiple View Geometry in Computer Vision",
+     Cambridge University Press, 2000.
+3. This template implementation has been successfully used to estimate the parameters of:
+   a. lines
+   b. circles
+   c. ellipses
+   d. homographies
+
+   I only provide the line parameter estimator as it is the only estimator that does not require
+   the availability of linear algebra packages or non-linear optimization code.
