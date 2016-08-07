@@ -1,0 +1,14 @@
+#Makefile for Ransac
+CC= g++ 
+CFLAGS= -O2
+OBJ= Point2D.o LineParamEstimator.o RansacExample.o
+PROG= RansacExample
+
+$(PROG): $(OBJ)
+	$(CC) $(OBJ) $(CFLAGS) -o $(PROG)
+
+.cpp.o  :
+	$(CC) $(CCFLAGS) $(PROGRAM_FLAGS) $(INCL) -c $< -o $*.o
+clean:
+	-rm core *.o *~ 
+	-rm $(PROG)
